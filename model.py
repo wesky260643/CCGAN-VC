@@ -57,7 +57,7 @@ class CCGAN(object):
         self.cycle_loss = l1_loss(y = self.input_A_real, y_hat = self.cycle_A)
 
         # Identity loss
-        self.identity_loss = l1_loss(y = self.input_A_real, y_hat = self.generation_B_identity)
+        self.identity_loss = l1_loss(y = self.input_B_real, y_hat = self.generation_B_identity)
 
         # Place holder for lambda_cycle and lambda_identity
         self.lambda_cycle = tf.placeholder(tf.float32, None, name = 'lambda_cycle')
